@@ -20,4 +20,9 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+    <scm>
+        <connection>scm:git:https://github.com/igor-syngenta/${project.artifactId}.git</connection>
+        <tag>${project.artifactId}-v${project.version}</tag>
+    </scm>
+
 </project>
