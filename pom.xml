@@ -7,15 +7,13 @@
     <groupId>com.syngenta.mvn.revision.test</groupId>
     <artifactId>mvn-revison-test</artifactId>
     <packaging>pom</packaging>
-    <version>${revision}${changelist}</version>
+    <version>${revision}</version>
     <modules>
         <module>mvn-revision-test-m0</module>
     </modules>
 
     <properties>
-        <revision>0.0.1</revision>
-        <changelist>-SNAPSHOT</changelist>
-        <sha1/>
+        <revision>0.0.1-SNAPSHOT</revision>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
@@ -23,26 +21,14 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.1.0</version>
-                <configuration>
-                    <updatePomFile>true</updatePomFile>
-                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                </configuration>
+                <groupId>com.outbrain.swinfra</groupId>
+                <artifactId>ci-friendly-flatten-maven-plugin</artifactId>
+                <version>1.0.14</version>
                 <executions>
                     <execution>
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>flatten</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>flatten.clean</id>
-                        <phase>clean</phase>
                         <goals>
                             <goal>clean</goal>
+                            <goal>flatten</goal>
                         </goals>
                     </execution>
                 </executions>
