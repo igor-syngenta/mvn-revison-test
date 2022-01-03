@@ -7,7 +7,7 @@
     <groupId>com.syngenta.mvn.revision.test</groupId>
     <artifactId>mvn-revison-test</artifactId>
     <packaging>pom</packaging>
-    <version>${revision}</version>
+    <version>${revision}${changelist}</version>
     <modules>
         <module>mvn-revision-test-m0</module>
     </modules>
