@@ -3,7 +3,7 @@
     <parent>
         <artifactId>mvn-revison-test</artifactId>
         <groupId>com.syngenta.mvn.revision.test</groupId>
-        <version>0.0.5</version>
+        <version>0.0.6-SNAPSHOT</version>
 <!--        <version>${revision}${changelist}</version>-->
     </parent>
     <modelVersion>4.0.0</modelVersion>
