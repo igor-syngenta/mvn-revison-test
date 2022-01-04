@@ -29,3 +29,4 @@ export CODEARTIFACT_TOKEN=`aws --region us-east-2 codeartifact get-authorization
 ## References
 * [Testing Maven Release Plugin Auto-Increment Version Number](https://www.javacodegeeks.com/2020/02/testing-maven-release-plugin-auto-increment-version-number.html)
 * [Ci friendly versions of Maven multi module unified version management - ${revision}](https://cdmana.com/2021/03/20210308060558968h.html)
+* [Build Helper Maven Plugin: parse-version goal](https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html)
