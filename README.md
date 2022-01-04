@@ -7,7 +7,7 @@ mvn -s ./.mvn/settings.xml release:clean release:prepare release:perform -B -Dsk
 
 ```shell
 export RELEASE_VER=$(cat revision.txt)
-mvn ci-friendly-flatten:scmTag -Drevision=$RELEASE_VER
+mvn ci-friendly-flatten:scmTag -Drevision=$RELEASE_VER -Dchangelist=
 ```
 
 ## Authorization
