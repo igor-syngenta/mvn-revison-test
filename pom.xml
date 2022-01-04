@@ -13,7 +13,7 @@
     </modules>
 
     <properties>
-        <revision>0.0.1</revision>
+        <revision>0.0.01</revision>
         <changelist>-SNAPSHOT</changelist>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
@@ -68,6 +68,7 @@
                                 log.info('parsedVersion.nextMinorVersion:  ${parsedVersion.nextMinorVersion}')
                                 log.info('parsedVersion.nextIncrementalVersion:  ${parsedVersion.nextIncrementalVersion}')
                                 log.info('parsedVersion.nextBuildNumber:  ${parsedVersion.nextBuildNumber}')
+                                log.info('parsedVersion.qualifier:  ${parsedVersion.qualifier}')
                             </source>
                         </configuration>
                     </execution>

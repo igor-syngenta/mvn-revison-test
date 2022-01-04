@@ -1,18 +1,23 @@
 # Testing maven revision info with flatten-maven-plugin
 
+
 ```shell
-mvn -s ./.mvn/settings.xml release:clean release:prepare release:perform --batch-mode -Dmaven.test.skip=true -Dmaven.javadoc.failOnError=false  
-mvn -s ./.mvn/settings.xml release:clean release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -Darguments="-Dmaven.javadoc.skip=true" -DscmCommentPrefix="[aws-codebuild] "
+ mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.incrementalVersion} -Dchangelist=
+ ```
 
-mvn -s ./.mvn/settings.xml build-helper:parse-version
-
+This should show the produced settings from `build-helper-maven-plugin:parse-version` plugin execution:
+```shell
 mvn -s ./.mvn/settings.xml validate
 ```
 
+Tagging git repository with `ci-friendly-flatten:scmTag`
 ```shell
 export RELEASE_VER=$(cat revision.txt)
 mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=0.0.3 -Dchangelist=
 ```
+
+## The problem
+The big problem is to properly increase project version and commit it back to git repository. That would require some kind of maven plugin to work with `build-helper-maven-plugin:parse-version` to update the maven `revision` property in `pom.xml`.  
 
 ## Authorization
 
