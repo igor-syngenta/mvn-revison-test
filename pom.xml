@@ -34,6 +34,45 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>incremental-version</id>
+                        <goals>
+                            <goal>parse-version</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                log.info('parsedVersion.majorVersion:  ${parsedVersion.majorVersion}')
+                                log.info('parsedVersion.minorVersion:  ${parsedVersion.minorVersion}')
+                                log.info('parsedVersion.incrementalVersion:  ${parsedVersion.incrementalVersion}')
+                                log.info('parsedVersion.buildNumber:  ${parsedVersion.buildNumber}')
+                                log.info('parsedVersion.nextMajorVersion:  ${parsedVersion.nextMajorVersion}')
+                                log.info('parsedVersion.nextMinorVersion:  ${parsedVersion.nextMinorVersion}')
+                                log.info('parsedVersion.nextIncrementalVersion:  ${parsedVersion.nextIncrementalVersion}')
+                                log.info('parsedVersion.nextBuildNumber:  ${parsedVersion.nextBuildNumber}')
+                            </source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

@@ -3,11 +3,15 @@
 ```shell
 mvn -s ./.mvn/settings.xml release:clean release:prepare release:perform --batch-mode -Dmaven.test.skip=true -Dmaven.javadoc.failOnError=false  
 mvn -s ./.mvn/settings.xml release:clean release:prepare release:perform -B -DskipTests=true -Djava.security.egd=file:/dev/./urandom -Darguments="-Dmaven.javadoc.skip=true" -DscmCommentPrefix="[aws-codebuild] "
+
+mvn -s ./.mvn/settings.xml build-helper:parse-version
+
+mvn -s ./.mvn/settings.xml validate
 ```
 
 ```shell
 export RELEASE_VER=$(cat revision.txt)
-mvn ci-friendly-flatten:scmTag -Drevision=$RELEASE_VER -Dchangelist=
+mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=0.0.3 -Dchangelist=
 ```
 
 ## Authorization
