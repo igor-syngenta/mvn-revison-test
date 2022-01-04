@@ -37,6 +37,22 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>codeartifact</id>
+            <name>codeartifact</name>
+            <url>https://cropwise-financials-500481770803.d.codeartifact.us-east-2.amazonaws.com/maven/cwf-nexus/</url>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <snapshots>
+                <updatePolicy>never</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <scm>
         <connection>scm:git:https://github.com/igor-syngenta/${project.artifactId}.git</connection>
         <tag>${project.artifactId}-v${project.version}</tag>
