@@ -2,7 +2,7 @@
 
 
 ```shell
- mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.\${parsedVersion.incrementalVersion} -Dchangelist=
+ mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=0.0.11 -Dchangelist=
  ```
 
 This should show the produced settings from `build-helper-maven-plugin:parse-version` plugin execution:
