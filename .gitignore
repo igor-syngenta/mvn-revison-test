@@ -7,3 +7,4 @@ target
 .classpath
 .flattened-pom.xml
 .ci-friendly-pom.xml
+revision.txt
