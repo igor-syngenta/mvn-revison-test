@@ -7,33 +7,33 @@
     <groupId>com.syngenta.mvn.revision.test</groupId>
     <artifactId>mvn-revison-test</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}${changelist}</version>
     <modules>
         <module>mvn-revision-test-m0</module>
     </modules>
 
     <properties>
-<!--        <revision>0.0.1</revision>-->
-<!--        <changelist>-SNAPSHOT</changelist>-->
+        <revision>0.0.1</revision>
+        <changelist>-SNAPSHOT</changelist>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <build>
         <plugins>
-<!--            <plugin>-->
-<!--                <groupId>com.outbrain.swinfra</groupId>-->
-<!--                <artifactId>ci-friendly-flatten-maven-plugin</artifactId>-->
-<!--                <version>1.0.14</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>clean</goal>-->
-<!--                            <goal>flatten</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>com.outbrain.swinfra</groupId>
+                <artifactId>ci-friendly-flatten-maven-plugin</artifactId>
+                <version>1.0.14</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 

@@ -1,9 +1,9 @@
 .project
 .settings
 *.iml
-*.idea
+.idea/
 logs
-target
+target/
 .classpath
 .flattened-pom.xml
 .ci-friendly-pom.xml
