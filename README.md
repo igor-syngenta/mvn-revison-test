@@ -1,8 +1,7 @@
 # Testing maven revision info with flatten-maven-plugin
 
-
 ```shell
- mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=0.0.11 -Dchangelist=
+mvn -s ./.mvn/settings.xml clean package deploy ci-friendly-flatten:scmTag -Drevision=0.0.11 -Dchangelist=
  ```
 
 This should show the produced settings from `build-helper-maven-plugin:parse-version` plugin execution:
@@ -34,4 +33,3 @@ export CODEARTIFACT_TOKEN=`aws --region us-east-2 codeartifact get-authorization
 * [Build Helper Maven Plugin: parse-version goal](https://www.mojohaus.org/build-helper-maven-plugin/parse-version-mojo.html)
 * [How To Increment Versions For Maven Build Java Project — Part 1](https://medium.com/javarevisited/how-to-increment-versions-for-the-maven-build-java-project-a7596cc501c2)
 * [How To Increment Versions For Maven Build Java Project — Part 2](https://medium.com/javarevisited/how-to-increment-versions-for-maven-build-java-project-part-2-eefdebc53f5b)
-
